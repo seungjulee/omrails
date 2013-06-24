@@ -1,7 +1,7 @@
 class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
-  before_filter :authenticate_user, except: [:index]
+  before_filter :authenticate_user!, except: [:index]
   def index
     @pins = Pin.all
 
@@ -12,7 +12,7 @@ class PinsController < ApplicationController
   end
 
   # GET /pins/1
-  # GET /pins/1.json
+  # GET /pins/1.son
   def show
     @pin = Pin.find(params[:id])
 
